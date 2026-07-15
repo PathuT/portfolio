@@ -1,7 +1,7 @@
 export const portfolioData = {
-  name: "Pathu T",
-  title: "Pathu T",
-  roleTitle: "Agentic AI Innovator, Backend Developer",
+  name: "Pathu Thangamuthu",
+  title: "Pathu Thangamuthu",
+  roleTitle: "Full Stack & AI Engineer",
   location: "Coimbatore, Tamil Nadu, India",
   email: "pathuthangamuthu@gmail.com",
   phone: "+91 9524214194",
@@ -10,92 +10,92 @@ export const portfolioData = {
 
   about: {
     summary: [
-      "I'm a recent B.E. graduate in Electrical, Electronics, and Communication Engineering from SNS College of Technology with 11+ months of hands-on experience in backend development, Agentic AI, DevOps, and full-stack product launches.",
-      "I've led cross-functional teams, built and deployed 45+ APIs, and worked with LLMs like LangChain and Gemini. I've managed automation pipelines using n8n and deployed scalable systems on AWS using Docker.",
-      "I'm now aiming for Program and Product Management roles that intersect with technology, where I can align people, products, and processes to deliver high-impact solutions."
+      "I'm a Full Stack Software Engineer with 2 years of software development experience, including 1 year as a Software Engineer and 1 year as a Software Engineering Intern in a product-based environment.",
+      "I build scalable, high-performance web applications and enterprise software solutions using Next.js, React.js, Node.js, Express.js, FastAPI, Python, MongoDB, and PostgreSQL, along with RESTful APIs, AI-powered features, and microservices-based architectures.",
+      "I have hands-on experience with AWS, Docker, Jenkins, and CI/CD pipelines, and I'm passionate about building clean, maintainable, secure, and scalable software with a strong focus on performance and engineering best practices."
     ],
     stats: [
       { value: "45+", label: "APIs Deployed" },
-      { value: "11+", label: "Months Experience" },
-      { value: "15+", label: "Projects Completed" },
-      { value: "5+", label: "Tech Stacks Mastered" }
+      { value: "2", label: "Years Experience" },
+      { value: "20+", label: "AI Agents Built" },
+      { value: "6+", label: "Tech Stacks Mastered" }
     ]
   },
 
   skills: [
     {
-      category: "Management & Leadership",
-      items: ["Project Management (Agile, Scrum, Sprint Planning)", "ClickUp, Google Sheets", "People & Team Management", "Documentation & Process Optimization"],
-      color: "purple"
-    },
-    {
-      category: "AI/ML & Development",
-      items: ["AI/ML", "MERN Stack (MongoDB, Express, React, Node.js)", "Agentic AI", "Python, JavaScript"],
+      category: "Full Stack Development",
+      items: ["Next.js, React.js", "Node.js, Express.js", "JavaScript (ES6+)", "Tailwind CSS, Bootstrap"],
       color: "blue"
     },
     {
-      category: "Cloud & DevOps",
-      items: ["AWS", "Docker", "MongoDB"],
+      category: "Backend & Databases",
+      items: ["Python, FastAPI", "REST APIs & Microservices", "MongoDB, PostgreSQL", "Redis"],
       color: "emerald"
+    },
+    {
+      category: "AI/ML & Cloud DevOps",
+      items: ["LangChain, LangGraph", "Agentic AI", "AWS (EC2, S3, Lambda)", "Docker, Jenkins"],
+      color: "purple"
     }
   ],
 
   projects: [
     {
-      title: "OKRION – AI-powered Data Platform",
-      description: "Built and launched an AI-powered platform for institutional performance tracking with planned NAAC integration. Developed backend, AI flows, and deployed using Docker + AWS.",
-      tags: ["AI/ML", "Docker", "AWS"],
+      title: "Agent Workbench – AI Agent & Workflow Builder",
+      description: "Contributed to an AI Agent & Workflow Builder Platform for designing and executing intelligent agents and business workflows. Designed PostgreSQL/MongoDB schemas, built LLM workflow nodes with tool-calling via LangChain, Gemini, and MCP, and implemented Redis (BullMQ) background execution with Docker + Jenkins CI/CD.",
+      tags: ["LangChain", "MCP", "Redis", "Docker"],
       color: "blue",
+      icon: "workflow"
+    },
+    {
+      title: "Working Capital Suite – AI Financial Orchestration",
+      description: "Developed an AI-driven Working Capital platform with 16 specialized AI agents across Accounts Receivable, Accounts Payable, Treasury, and Credit Risk. Built 3-Way Match Validation, Payment Prioritization, Treasury Intelligence, and Cash Forecasting agents, integrating OCR and financial APIs to automate finance operations.",
+      tags: ["AI Agents", "Node.js", "PostgreSQL", "LLMs"],
+      color: "amber",
       icon: "chart-bar"
     },
     {
-      title: "LinkedIn & LeetCode Verification App",
-      description: "Led development of a GenAI web app for validating user submissions. Managed product roadmap, LLM integration (Gemini, LangGraph), and automation using n8n.",
-      tags: ["GenAI", "LangGraph", "n8n"],
+      title: "DocSentra – Healthcare Management Platform",
+      description: "Built the AI-powered Clinical Assistance module with role-based workflows for doctors, nurses, and technicians. Implemented RBAC and RAG-powered clinical assistance using hospital SOPs, plus AI workflows for patient history summarization, diagnostic support, and treatment planning.",
+      tags: ["RAG", "RBAC", "FastAPI", "MongoDB"],
       color: "emerald",
-      icon: "check-circle"
+      icon: "heart-pulse"
     },
     {
-      title: "15+ Agentic AI Projects",
-      description: "Built and deployed 15+ Agentic AI systems using reflection patterns and modular agents. Integrated tools like LangChain, LangGraph, CrewAI, and n8n for dynamic goal-driven automation",
-      tags: ["Agentic AI", "LangChain", "LangGraph", "CrewAI", "n8n", ],
-      color: "amber",
-      icon: "seedling",
+      title: "Agentic AI Portfolio (20+ AI Agents)",
+      description: "Built 20+ AI agents integrated into full-stack applications using LangGraph orchestration, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), tool calling, and vector search for enterprise automation and document intelligence.",
+      tags: ["LangGraph", "RAG", "MCP", "FAISS", "ChromaDB"],
+      color: "purple",
+      icon: "seedling"
     }
   ],
 
   experience: [
     {
-      role: "Product Intern",
-      company: "SNS InnovationHub",
-      date: "Aug 2024 – Present",
+      role: "Junior Software Associate",
+      company: "SNS Ihub",
+      date: "Sep 2025 – Present",
       description: [
-        "Worked with teams and AI product lifecycles",
-        "Developed Agentic AI-powered web apps",
-        "Led backend microservices and deployment (Docker + AWS)",
-        "Oversaw system design and LLM-based automation (n8n, LangChain)"
+        "Contributed to Agent Workbench, an AI Agent & Workflow Builder Platform — designed PostgreSQL/MongoDB schemas and built LLM workflow nodes with tool-calling using LangChain, Gemini, and MCP",
+        "Implemented Redis (BullMQ) based background workflow execution with Docker and Jenkins CI/CD deployments",
+        "Developed 16 specialized AI agents for the Working Capital Suite across Accounts Receivable, Accounts Payable, Treasury, and Credit Risk, automating invoice ingestion, forex valuation, and cash forecasting",
+        "Built the AI-powered Clinical Assistance module for DocSentra with RBAC and RAG-powered responses using a MongoDB-backed clinical knowledge base",
+        "Developed full-stack modules for Procure-to-Pay (P2P), Order-to-Cash (O2C), and Record-to-Report (R2R) business processes, including invoice management, reconciliation, and financial reporting"
       ],
       color: "blue"
     },
     {
-      role: "Signal & Telecom Intern",
-      company: "Southern Railways",
-      date: "Jul 2023 – Aug 2023",
+      role: "Software Engineering Intern",
+      company: "SNS Ihub",
+      date: "Sep 2025 – Present",
       description: [
-        "Worked as Technical development and Management  on 3 major signal projects",
-        "Involved in RRI, continuous track circuiting, and control panel systems"
+        "Developed 45+ backend REST APIs using Node.js within a microservices architecture for OKRion, an AI-powered task management platform",
+        "Built AI-powered modules for Business Card Automation, Resume Analysis, and LinkedIn Article Validation & Verification",
+        "Designed MongoDB schemas, optimized queries, and integrated AWS S3 for secure file storage and document management",
+        "Developed full-stack modules for the NAAC Accreditation Management Platform, including AI-assisted QlM generation and SSR/AQAR export"
       ],
       color: "emerald"
-    },
-    {
-      role: "Technical & Public Relations Intern",
-      company: "IIT Guwahati",
-      date: "Oct 2022 – Jan 2023",
-      description: [
-        "Streamlined virtual event requirement processes",
-        "Part of Technothlon organizing team (India's largest student contest)"
-      ],
-      color: "amber"
     }
   ],
 
@@ -104,15 +104,16 @@ export const portfolioData = {
       degree: "B.E. Electronics and Communication Engineering (Hons)",
       institution: "SNS College of Technology",
       location: "Coimbatore, India",
-      date: "Nov 2021 – May 2025",
-      score: "CGPA: 8.59",
+      date: "2025",
+      score: "CGPA: 8.5",
       type: "cgpa"
     },
     {
       degree: "Higher Secondary Certificate (HSC)",
       institution: "KG Matric Hr. Sec School",
-      date: "May 2021",
-      score: "89%",
+      location: "Coimbatore, India",
+      date: "2021",
+      score: "88%",
       type: "percentage"
     },
     {
@@ -126,77 +127,66 @@ export const portfolioData = {
 
   certifications: [
     {
-      title: "Procore Certified: Project Manager (Project Management)",
-      issuer: "Procore Technologies",
-      date: "Jun 2025",
-      credentialId: "m7iihdfqs6zp",
-      color: "blue"
-    },
-    {
-      title: "Academy Accreditation - Generative AI",
+      title: "Databricks Certified Generative AI Engineer Associate",
       issuer: "Databricks",
-      date: "May 2025",
-      expires: "May 2027",
-      credentialId: "143071359",
+      date: "Dec 2025",
+      expires: "Dec 2027",
       color: "emerald"
     },
     {
-      title: "Data Landscape of GenAI for PMs",
-      issuer: "Project Management Institute",
-      date: "Dec 2024",
-      credentialId: "27576f9f-a0df-4cbd-99a3-135cfc8c70ba",
-      color: "purple"
-    },
-    {
-      title: "HackerRank Software Engineer Intern Certification",
-      issuer: "HackerRank",
-      date: "Nov 2024",
-      credentialId: "DB6A4C37761A",
+      title: "AWS Certified Cloud Practitioner (CLF-C02)",
+      issuer: "Amazon Web Services",
+      date: "Jun 2026",
       color: "amber"
     },
     {
-      title: "edX Verified Certificate - Data Analytics on AWS",
-      issuer: "edX",
-      date: "Apr 2022",
-      credentialId: "f11682e824b3426498fec243834d88ef",
-      color: "indigo"
+      title: "HackerRank Software Engineer Certification",
+      issuer: "HackerRank",
+      date: "Nov 2024",
+      color: "blue"
+    },
+    {
+      title: "Master in Software Architecture, Engineering and Development",
+      issuer: "Udemy",
+      date: "Mar 2026",
+      color: "purple"
     }
   ],
 
   achievements: [
     {
-      title: "Spirit of Innovation Award",
-      organization: "CMR University, 2023",
+      title: "Winner – National Entrepreneurship Challenge 2024",
+      organization: "Eureka Pitching Competition, IIT Bombay",
       icon: "trophy",
       color: "blue"
     },
     {
-      title: "2 Patents Filed",
+      title: "2 Utility Patents & 1 Design Patent Filed",
       organization: "Innovation & Research",
       icon: "lightbulb",
       color: "emerald"
     },
     {
-      title: "All Round Performer Award",
-      organization: "SNS Institutions, 2023-2024",
+      title: "Spirit of Innovation Award",
+      organization: "CMR University, Bangalore, 2023",
       icon: "star",
       color: "purple"
     },
     {
       title: "Best Paper Award",
-      organization: "GENESIS'2k22",
+      organization: "GENESIS'2K22 (National Conference)",
       icon: "award",
       color: "amber"
     },
     {
       title: "Conference Presenter",
-      organization: "2 International + 4 National",
+      organization: "2 International + 4 National Conferences",
       icon: "presentation",
       color: "rose"
     },
     {
-      title: "Presentation Winner",
-      organization: "Talent India - GCT, 2022",
+      title: "Best Speaker Award",
+      organization: "PSG College of Technology, 2024",
       icon: "microphone",
       color: "teal"
     }
