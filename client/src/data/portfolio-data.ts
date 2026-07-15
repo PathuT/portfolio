@@ -11,9 +11,9 @@ export const portfolioData = {
 
   about: {
     summary: [
-      "I'm a Full Stack Software Engineer with 2 years of software development experience, including 1 year as a Software Engineer and 1 year as a Software Engineering Intern in a product-based environment.",
-      "I build scalable, high-performance web applications and enterprise software solutions using Next.js, React.js, Node.js, Express.js, FastAPI, Python, MongoDB, and PostgreSQL, along with RESTful APIs, AI-powered features, and microservices-based architectures.",
-      "I have hands-on experience with AWS, Docker, Jenkins, and CI/CD pipelines, and I'm passionate about building clean, maintainable, secure, and scalable software with a strong focus on performance and engineering best practices."
+      "Two years into my engineering journey, I've moved from intern to full-time engineer at a product company — shipping real features, not just tickets.",
+      "My day-to-day spans the whole stack: Next.js and React on the front, Node.js, Express, and FastAPI underneath, with MongoDB and PostgreSQL holding the data. I like wiring in AI where it actually earns its keep and breaking monoliths into microservices that are easier to reason about.",
+      "Beyond the code, I care about the plumbing that keeps it running — AWS, Docker, Jenkins, CI/CD — and about writing software a teammate can pick up six months later without cursing my name."
     ],
     stats: [
       { value: "45+", label: "APIs Deployed" },
@@ -44,28 +44,28 @@ export const portfolioData = {
   projects: [
     {
       title: "Agent Workbench – AI Agent & Workflow Builder",
-      description: "Contributed to an AI Agent & Workflow Builder Platform for designing and executing intelligent agents and business workflows. Designed PostgreSQL/MongoDB schemas, built LLM workflow nodes with tool-calling via LangChain, Gemini, and MCP, and implemented Redis (BullMQ) background execution with Docker + Jenkins CI/CD.",
+      description: "A drag-and-drop builder for AI agents and business workflows. I shaped the PostgreSQL/MongoDB data layer, wired up LLM nodes that call external tools through LangChain, Gemini, and MCP, and moved long-running jobs onto a Redis/BullMQ queue behind a Docker + Jenkins pipeline.",
       tags: ["LangChain", "MCP", "Redis", "Docker"],
       color: "blue",
       icon: "workflow"
     },
     {
       title: "Working Capital Suite – AI Financial Orchestration",
-      description: "Developed an AI-driven Working Capital platform with 16 specialized AI agents across Accounts Receivable, Accounts Payable, Treasury, and Credit Risk. Built 3-Way Match Validation, Payment Prioritization, Treasury Intelligence, and Cash Forecasting agents, integrating OCR and financial APIs to automate finance operations.",
+      description: "A finance automation platform where 16 purpose-built agents cover receivables, payables, treasury, and credit risk. I built the agents behind invoice 3-way matching, payment prioritization, treasury signals, and cash forecasting, tying in OCR and banking APIs so the finance team stops copy-pasting numbers.",
       tags: ["AI Agents", "Node.js", "PostgreSQL", "LLMs"],
       color: "amber",
       icon: "chart-bar"
     },
     {
       title: "DocSentra – Healthcare Management Platform",
-      description: "Built the AI-powered Clinical Assistance module with role-based workflows for doctors, nurses, and technicians. Implemented RBAC and RAG-powered clinical assistance using hospital SOPs, plus AI workflows for patient history summarization, diagnostic support, and treatment planning.",
+      description: "Clinical assistant tooling built for doctors, nurses, and technicians, each with their own view into the system. It leans on RBAC and a RAG layer grounded in hospital SOPs to summarize patient history, flag symptoms worth a second look, and support treatment planning without replacing clinical judgment.",
       tags: ["RAG", "RBAC", "FastAPI", "MongoDB"],
       color: "emerald",
       icon: "heart-pulse"
     },
     {
       title: "Agentic AI Portfolio (20+ AI Agents)",
-      description: "Built 20+ AI agents integrated into full-stack applications using LangGraph orchestration, Retrieval-Augmented Generation (RAG), Model Context Protocol (MCP), tool calling, and vector search for enterprise automation and document intelligence.",
+      description: "A personal lab of 20+ agents, each dropped into a full-stack app to see how far LangGraph orchestration, RAG, MCP, and vector search can go for real automation and document-heavy tasks — the testbed I use before an idea earns a place in production work.",
       tags: ["LangGraph", "RAG", "MCP", "FAISS", "ChromaDB"],
       color: "purple",
       icon: "seedling"
@@ -78,11 +78,11 @@ export const portfolioData = {
       company: "SNS Ihub",
       date: "Sep 2025 – Present",
       description: [
-        "Contributed to Agent Workbench, an AI Agent & Workflow Builder Platform — designed PostgreSQL/MongoDB schemas and built LLM workflow nodes with tool-calling using LangChain, Gemini, and MCP",
-        "Implemented Redis (BullMQ) based background workflow execution with Docker and Jenkins CI/CD deployments",
-        "Developed 16 specialized AI agents for the Working Capital Suite across Accounts Receivable, Accounts Payable, Treasury, and Credit Risk, automating invoice ingestion, forex valuation, and cash forecasting",
-        "Built the AI-powered Clinical Assistance module for DocSentra with RBAC and RAG-powered responses using a MongoDB-backed clinical knowledge base",
-        "Developed full-stack modules for Procure-to-Pay (P2P), Order-to-Cash (O2C), and Record-to-Report (R2R) business processes, including invoice management, reconciliation, and financial reporting"
+        "Helped build Agent Workbench from the data layer up — modeled the PostgreSQL/MongoDB schema and shipped LLM workflow nodes that call tools through LangChain, Gemini, and MCP",
+        "Moved background workflow processing onto a Redis/BullMQ queue and got it deploying cleanly through Docker and Jenkins",
+        "Built out 16 AI agents for the Working Capital Suite covering receivables, payables, treasury, and credit risk — automating invoice intake, forex revaluation, and cash forecasting that used to be manual",
+        "Shipped DocSentra's Clinical Assistance module, pairing RBAC with a RAG pipeline over a MongoDB clinical knowledge base",
+        "Built the full-stack pieces behind Procure-to-Pay, Order-to-Cash, and Record-to-Report — invoicing, reconciliation, and the financial reporting on top of it"
       ],
       color: "blue"
     },
@@ -91,10 +91,10 @@ export const portfolioData = {
       company: "SNS Ihub",
       date: "Sep 2025 – Present",
       description: [
-        "Developed 45+ backend REST APIs using Node.js within a microservices architecture for OKRion, an AI-powered task management platform",
-        "Built AI-powered modules for Business Card Automation, Resume Analysis, and LinkedIn Article Validation & Verification",
-        "Designed MongoDB schemas, optimized queries, and integrated AWS S3 for secure file storage and document management",
-        "Developed full-stack modules for the NAAC Accreditation Management Platform, including AI-assisted QlM generation and SSR/AQAR export"
+        "Wrote 45+ REST APIs in Node.js as part of OKRion's microservices backend, an AI-powered task management platform",
+        "Shipped AI modules for automating business-card capture, screening resumes, and verifying LinkedIn articles",
+        "Designed the MongoDB schema, tuned slow queries, and hooked up AWS S3 for document storage",
+        "Built full-stack pieces of the NAAC Accreditation platform, including AI-assisted QlM generation and SSR/AQAR export"
       ],
       color: "emerald"
     }

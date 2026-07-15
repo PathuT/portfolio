@@ -1,5 +1,5 @@
 import { portfolioData } from "@/data/portfolio-data";
-import { ChevronDown, Download, ArrowRight, Sparkles } from "lucide-react";
+import { ChevronDown, Download, ArrowRight, Sparkles, MapPin, Code2, CalendarClock, Bot, Layers } from "lucide-react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
@@ -10,6 +10,8 @@ const initials = portfolioData.name
   .join("")
   .slice(0, 2)
   .toUpperCase();
+
+const statIcons = [Code2, CalendarClock, Bot, Layers];
 
 export default function HeroSection() {
   const handleScrollToProjects = () => {
@@ -211,7 +213,7 @@ export default function HeroSection() {
               <div className="absolute -inset-4 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-[2rem] blur-2xl" />
               <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 shadow-2xl">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-6">
+                  <div className="relative mb-5">
                     <motion.div
                       className="absolute -inset-2 rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 opacity-70 blur-md"
                       animate={{ rotate: 360 }}
@@ -220,22 +222,35 @@ export default function HeroSection() {
                     <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-blue-500 to-indigo-700 flex items-center justify-center border-4 border-slate-950 shadow-xl">
                       <span className="font-display text-3xl font-bold text-white">{initials}</span>
                     </div>
+                    <span className="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-emerald-500 border-4 border-slate-950" />
                   </div>
-                  <h3 className="text-white font-semibold text-lg mb-1">{portfolioData.name}</h3>
-                  <p className="text-slate-400 text-sm mb-6">{portfolioData.location}</p>
 
-                  <div className="grid grid-cols-3 gap-3 w-full">
-                    {portfolioData.about.stats.slice(0, 3).map((stat) => (
-                      <div
-                        key={stat.label}
-                        className="bg-white/[0.03] border border-white/10 rounded-xl py-3 px-2"
-                      >
-                        <div className="text-lg font-bold text-white font-display">{stat.value}</div>
-                        <div className="text-[10px] uppercase tracking-wide text-slate-400 mt-0.5 leading-tight">
-                          {stat.label}
-                        </div>
-                      </div>
-                    ))}
+                  <h3 className="text-white font-display font-bold text-xl mb-1.5">{portfolioData.name}</h3>
+                  <p className="text-slate-400 text-sm font-medium mb-2">{portfolioData.roleTitle}</p>
+                  <div className="inline-flex items-center gap-1.5 text-slate-500 text-xs mb-6">
+                    <MapPin className="w-3.5 h-3.5" />
+                    {portfolioData.location}
+                  </div>
+
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6" />
+
+                  <div className="grid grid-cols-2 gap-3 w-full">
+                    {portfolioData.about.stats.map((stat, index) => {
+                      const StatIcon = statIcons[index] ?? Code2;
+                      return (
+                        <motion.div
+                          key={stat.label}
+                          className="bg-white/[0.03] border border-white/10 rounded-xl py-4 px-3 text-left hover:bg-white/[0.06] hover:border-white/20 transition-colors"
+                          whileHover={{ y: -2 }}
+                        >
+                          <StatIcon className="w-4 h-4 text-blue-400 mb-2" />
+                          <div className="text-xl font-bold text-white font-display leading-none">{stat.value}</div>
+                          <div className="text-[10px] uppercase tracking-wide text-slate-400 mt-1.5 leading-tight">
+                            {stat.label}
+                          </div>
+                        </motion.div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
