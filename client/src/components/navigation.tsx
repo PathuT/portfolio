@@ -96,8 +96,9 @@ export default function Navigation() {
 
           <div className="hidden md:block">
             <a
-              href="/Resume/Pathu.T_resume.pdf"
-              download="Pathu.T_resume.pdf"
+              href={portfolioData.resume}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium text-white bg-white/10 hover:bg-white/15 border border-white/15 px-4 py-2 rounded-full transition-colors duration-200"
               data-testid="nav-download-resume"
             >
@@ -143,8 +144,9 @@ export default function Navigation() {
                 </button>
               ))}
               <a
-                href="/Resume/Pathu.T_resume.pdf"
-                download="Pathu.T_resume.pdf"
+                href={portfolioData.resume}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-base font-medium text-blue-400 hover:bg-slate-800/50"
               >
                 <Download className="w-4 h-4" />

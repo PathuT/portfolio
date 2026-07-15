@@ -7,6 +7,7 @@ export const portfolioData = {
   phone: "+91 9524214194",
   linkedin: "https://www.linkedin.com/in/pathu-t",
   github: "https://github.com/PathuT",
+  resume: "https://drive.google.com/drive/folders/1iezPKVu9h7btGMhzQUaQ4W6ltC6Ko9bY?usp=sharing",
 
   about: {
     summary: [

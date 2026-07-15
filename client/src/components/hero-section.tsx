@@ -146,8 +146,9 @@ export default function HeroSection() {
                 View Work
               </motion.button>
               <motion.a
-                href="/Resume/Pathu.T_resume.pdf"
-                download="Pathu.T_resume.pdf"
+                href={portfolioData.resume}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 text-slate-300 px-4 py-3.5 font-medium hover:text-white transition-colors"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
