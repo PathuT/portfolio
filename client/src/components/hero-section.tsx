@@ -38,20 +38,20 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-slate-950 overflow-hidden pt-24 pb-16"
+      className="relative min-h-screen flex items-center bg-[#0a0d12] overflow-hidden pt-24 pb-16"
     >
       {/* Base gradient wash */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
+      <div className="absolute inset-0 bg-[radial-gradient(60rem_30rem_at_85%_-10%,rgba(94,234,212,0.10),transparent_60%),radial-gradient(50rem_30rem_at_-10%_20%,rgba(129,140,248,0.12),transparent_55%)]" />
       <div className="absolute inset-0 noise-overlay" />
 
       {/* Soft ambient glows */}
       <motion.div
-        className="absolute -top-40 -left-40 w-[32rem] h-[32rem] bg-blue-600/20 rounded-full blur-[120px]"
+        className="absolute -top-40 -left-40 w-[32rem] h-[32rem] bg-teal-500/10 rounded-full blur-[120px]"
         animate={{ opacity: [0.5, 0.8, 0.5] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute -bottom-40 -right-20 w-[28rem] h-[28rem] bg-indigo-600/15 rounded-full blur-[120px]"
+        className="absolute -bottom-40 -right-20 w-[28rem] h-[28rem] bg-indigo-500/10 rounded-full blur-[120px]"
         animate={{ opacity: [0.4, 0.7, 0.4] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       />
@@ -76,22 +76,22 @@ export default function HeroSection() {
             animate="visible"
           >
             <motion.div
-              className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 mb-8"
+              className="inline-flex items-center gap-2 bg-teal-400/10 border border-teal-400/25 rounded-full px-4 py-1.5 mb-8"
               variants={itemVariants}
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-300 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-300" />
               </span>
-              <span className="text-blue-300 text-sm font-medium">Open to new opportunities</span>
+              <span className="text-teal-300 text-sm font-medium">Open to new opportunities</span>
             </motion.div>
 
             <motion.h1
-              className="font-display font-bold text-white leading-[1.05] mb-6 text-4xl sm:text-5xl lg:text-6xl"
+              className="font-display font-bold text-white leading-[1.05] mb-6 text-4xl sm:text-5xl lg:text-6xl tracking-tight"
               variants={itemVariants}
             >
               Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-teal-300 to-indigo-400 bg-clip-text text-transparent">
                 {portfolioData.name}
               </span>
             </motion.h1>
@@ -130,7 +130,7 @@ export default function HeroSection() {
             >
               <motion.button
                 onClick={handleScrollToContact}
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-7 py-3.5 rounded-xl font-semibold shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-shadow"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#0a0d12] px-7 py-3.5 rounded-xl font-semibold shadow-lg shadow-black/20 hover:bg-slate-100 transition-colors"
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 data-testid="button-contact-me"
@@ -140,11 +140,11 @@ export default function HeroSection() {
               </motion.button>
               <motion.button
                 onClick={handleScrollToProjects}
-                className="inline-flex items-center justify-center gap-2 border border-slate-700 text-slate-200 px-7 py-3.5 rounded-xl font-semibold hover:bg-white/5 hover:border-slate-600 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-white/15 text-slate-200 px-7 py-3.5 rounded-xl font-semibold hover:bg-white/5 hover:border-white/25 transition-colors"
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
               >
-                <Sparkles className="w-4 h-4 text-blue-400" />
+                <Sparkles className="w-4 h-4 text-teal-300" />
                 View Work
               </motion.button>
               <motion.a
@@ -169,7 +169,7 @@ export default function HeroSection() {
                 (skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-slate-300 text-xs font-medium hover:border-blue-500/30 hover:text-blue-300 transition-colors"
+                    className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-slate-300 text-xs font-medium hover:border-teal-400/30 hover:text-teal-300 transition-colors"
                   >
                     {skill}
                   </span>
@@ -194,7 +194,7 @@ export default function HeroSection() {
                 href={portfolioData.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/5 border border-white/10 hover:bg-blue-500/20 hover:border-blue-500/30 rounded-full flex items-center justify-center transition-colors"
+                className="w-11 h-11 bg-white/5 border border-white/10 hover:bg-indigo-400/20 hover:border-indigo-400/30 rounded-full flex items-center justify-center transition-colors"
                 data-testid="link-linkedin"
               >
                 <FaLinkedin className="text-white text-lg" />
@@ -210,19 +210,19 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <div className="relative w-full max-w-sm">
-              <div className="absolute -inset-4 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-[2rem] blur-2xl" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-teal-400/15 to-indigo-500/15 rounded-[2rem] blur-2xl" />
               <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 shadow-2xl">
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-5">
                     <motion.div
-                      className="absolute -inset-2 rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 opacity-70 blur-md"
+                      className="absolute -inset-2 rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-500 opacity-70 blur-md"
                       animate={{ rotate: 360 }}
                       transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
                     />
-                    <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-blue-500 to-indigo-700 flex items-center justify-center border-4 border-slate-950 shadow-xl">
-                      <span className="font-display text-3xl font-bold text-white">{initials}</span>
+                    <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-teal-400 to-indigo-500 flex items-center justify-center border-4 border-[#0a0d12] shadow-xl">
+                      <span className="font-display text-3xl font-bold text-[#0a0d12]">{initials}</span>
                     </div>
-                    <span className="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-emerald-500 border-4 border-slate-950" />
+                    <span className="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-teal-300 border-4 border-[#0a0d12]" />
                   </div>
 
                   <h3 className="text-white font-display font-bold text-xl mb-1.5">{portfolioData.name}</h3>
@@ -243,8 +243,8 @@ export default function HeroSection() {
                           className="bg-white/[0.03] border border-white/10 rounded-xl py-4 px-3 text-left hover:bg-white/[0.06] hover:border-white/20 transition-colors"
                           whileHover={{ y: -2 }}
                         >
-                          <StatIcon className="w-4 h-4 text-blue-400 mb-2" />
-                          <div className="text-xl font-bold text-white font-display leading-none">{stat.value}</div>
+                          <StatIcon className={`w-4 h-4 mb-2 ${index % 2 === 0 ? "text-teal-300" : "text-indigo-300"}`} />
+                          <div className="text-xl font-bold text-white font-display leading-none tabular-nums">{stat.value}</div>
                           <div className="text-[10px] uppercase tracking-wide text-slate-400 mt-1.5 leading-tight">
                             {stat.label}
                           </div>

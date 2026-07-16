@@ -54,7 +54,7 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/60 shadow-lg shadow-black/10"
+          ? "bg-white/80 dark:bg-[#0a0d12]/80 backdrop-blur-xl border-b border-slate-200 dark:border-white/[0.08] shadow-lg shadow-black/5 dark:shadow-black/20"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -64,7 +64,7 @@ export default function Navigation() {
             onClick={() => handleNavClick("#home")}
             className="flex-shrink-0 group"
           >
-            <span className="text-lg font-bold font-display bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent group-hover:from-blue-300 group-hover:to-indigo-300 transition-colors">
+            <span className="text-lg font-bold font-display tracking-tight text-slate-900 dark:text-white">
               {portfolioData.name}
             </span>
           </button>
@@ -77,14 +77,14 @@ export default function Navigation() {
                   key={item.href}
                   onClick={() => handleNavClick(item.href)}
                   className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
-                    isActive ? "text-white" : "text-slate-400 hover:text-slate-100"
+                    isActive ? "text-slate-900 dark:text-white" : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-100"
                   }`}
                   data-testid={`nav-link-${item.label.toLowerCase()}`}
                 >
                   {isActive && (
                     <motion.span
                       layoutId="nav-active-pill"
-                      className="absolute inset-0 bg-white/10 border border-white/10 rounded-full"
+                      className="absolute inset-0 bg-slate-900/5 dark:bg-white/10 border border-slate-900/10 dark:border-white/10 rounded-full"
                       transition={{ type: "spring", stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -99,7 +99,7 @@ export default function Navigation() {
               href={portfolioData.resume}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-white bg-white/10 hover:bg-white/15 border border-white/15 px-4 py-2 rounded-full transition-colors duration-200"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#0a0d12] bg-teal-300 hover:bg-teal-200 px-4 py-2 rounded-full transition-colors duration-200"
               data-testid="nav-download-resume"
             >
               <Download className="w-3.5 h-3.5" />
@@ -110,7 +110,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-slate-300 hover:text-blue-400 focus:outline-none"
+              className="text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-300 focus:outline-none"
               data-testid="mobile-menu-button"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -126,7 +126,7 @@ export default function Navigation() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-slate-950/95 backdrop-blur-lg border-t border-slate-800/50 overflow-hidden"
+            className="md:hidden bg-white/95 dark:bg-[#0a0d12]/95 backdrop-blur-lg border-t border-slate-200 dark:border-white/[0.08] overflow-hidden"
           >
             <div className="px-4 pt-2 pb-4 space-y-1">
               {navItems.map((item) => (
@@ -135,8 +135,8 @@ export default function Navigation() {
                   onClick={() => handleNavClick(item.href)}
                   className={`block px-3 py-2.5 rounded-lg text-base font-medium w-full text-left transition-colors ${
                     activeSection === item.href
-                      ? "text-white bg-white/10"
-                      : "text-slate-300 hover:text-blue-400 hover:bg-slate-800/50"
+                      ? "text-slate-900 dark:text-white bg-slate-900/5 dark:bg-white/10"
+                      : "text-slate-600 dark:text-slate-300 hover:text-teal-600 dark:hover:text-teal-300 hover:bg-slate-900/5 dark:hover:bg-white/5"
                   }`}
                   data-testid={`mobile-nav-link-${item.label.toLowerCase()}`}
                 >
@@ -147,7 +147,7 @@ export default function Navigation() {
                 href={portfolioData.resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-base font-medium text-blue-400 hover:bg-slate-800/50"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-base font-medium text-teal-600 dark:text-teal-300 hover:bg-slate-900/5 dark:hover:bg-white/5"
               >
                 <Download className="w-4 h-4" />
                 Download Resume

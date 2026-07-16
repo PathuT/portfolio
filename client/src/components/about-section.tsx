@@ -21,16 +21,9 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-24 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-[0.4]"
-        style={{
-          backgroundImage: `radial-gradient(circle at 25px 25px, rgba(59, 130, 246, 0.08) 2px, transparent 2px)`,
-          backgroundSize: "50px 50px",
-        }}
-      />
-      <div className="absolute top-24 right-10 w-72 h-72 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full blur-3xl opacity-50" />
-      <div className="absolute bottom-10 left-10 w-56 h-56 bg-gradient-to-br from-purple-100 to-blue-100 rounded-full blur-3xl opacity-40" />
+    <section id="about" className="py-24 bg-[#0b0e13] relative overflow-hidden">
+      <div className="absolute top-24 right-10 w-72 h-72 bg-teal-500/[0.06] rounded-full blur-[100px]" />
+      <div className="absolute bottom-10 left-10 w-56 h-56 bg-indigo-500/[0.06] rounded-full blur-[100px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -40,10 +33,10 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-blue-600 font-semibold text-sm tracking-widest uppercase">Get to know me</span>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-slate-900 mt-3 mb-4">About Me</h2>
+          <span className="text-teal-300 font-semibold text-sm tracking-widest uppercase">Get to know me</span>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-3 mb-4">About Me</h2>
           <motion.div
-            className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full"
+            className="w-16 h-1 bg-gradient-to-r from-teal-300 to-indigo-400 mx-auto rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: "4rem" }}
             viewport={{ once: true }}
@@ -60,10 +53,10 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold font-display text-slate-900 mb-5 leading-snug">
+            <h3 className="text-2xl md:text-3xl font-bold font-display text-white mb-5 leading-snug">
               Building tomorrow's technology, today
             </h3>
-            <div className="space-y-4 text-slate-600 text-lg leading-relaxed">
+            <div className="space-y-4 text-slate-400 text-lg leading-relaxed">
               {portfolioData.about.summary.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -78,15 +71,15 @@ export default function AboutSection() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            {portfolioData.about.stats.map((stat) => (
+            {portfolioData.about.stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="text-center p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
+                className="text-center p-6 bg-white/[0.03] rounded-2xl border border-white/10 hover:border-white/20 transition-colors duration-300"
                 variants={itemVariants}
                 whileHover={{ scale: 1.03, y: -3 }}
               >
-                <div className="text-3xl font-bold font-display text-blue-600 mb-1">{stat.value}</div>
-                <div className="text-sm font-medium text-slate-500">{stat.label}</div>
+                <div className={`text-3xl font-bold font-display mb-1 tabular-nums ${index % 2 === 0 ? "text-teal-300" : "text-indigo-300"}`}>{stat.value}</div>
+                <div className="text-sm font-medium text-slate-400">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -100,7 +93,7 @@ export default function AboutSection() {
             return (
               <motion.div
                 key={groupIndex}
-                className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-6 border border-slate-100 hover:border-slate-200"
+                className="bg-white/[0.03] rounded-2xl transition-all duration-300 p-6 border border-white/10 hover:border-white/20"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -108,20 +101,20 @@ export default function AboutSection() {
                 whileHover={{ y: -5 }}
               >
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${tokens.softBg}`}>
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${tokens.softBg} border ${tokens.softBorder}`}>
                     <IconComponent className={`w-6 h-6 ${tokens.text}`} />
                   </div>
-                  <h4 className="text-lg font-bold text-slate-900">{skillGroup.category}</h4>
+                  <h4 className="text-lg font-bold text-white">{skillGroup.category}</h4>
                 </div>
 
                 <div className="space-y-2.5">
                   {skillGroup.items.map((skill, skillIndex) => (
                     <div
                       key={skillIndex}
-                      className="flex items-center p-2 rounded-lg hover:bg-slate-50 transition-colors duration-200 group"
+                      className="flex items-center p-2 rounded-lg hover:bg-white/[0.04] transition-colors duration-200 group"
                     >
                       <div className={`w-1.5 h-1.5 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200 ${tokens.dot}`} />
-                      <span className="text-slate-700 font-medium text-sm">{skill}</span>
+                      <span className="text-slate-300 font-medium text-sm">{skill}</span>
                     </div>
                   ))}
                 </div>

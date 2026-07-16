@@ -27,17 +27,17 @@ export const portfolioData = {
     {
       category: "Full Stack Development",
       items: ["Next.js, React.js", "Node.js, Express.js", "JavaScript (ES6+)", "Tailwind CSS, Bootstrap"],
-      color: "blue"
+      color: "mint"
     },
     {
       category: "Backend & Databases",
       items: ["Python, FastAPI", "REST APIs & Microservices", "MongoDB, PostgreSQL", "Redis"],
-      color: "emerald"
+      color: "indigo"
     },
     {
       category: "AI/ML & Cloud DevOps",
       items: ["LangChain, LangGraph", "Agentic AI", "AWS (EC2, S3, Lambda)", "Docker, Jenkins"],
-      color: "purple"
+      color: "mint"
     }
   ],
 
@@ -46,28 +46,28 @@ export const portfolioData = {
       title: "Agent Workbench – AI Agent & Workflow Builder",
       description: "A drag-and-drop builder for AI agents and business workflows. I shaped the PostgreSQL/MongoDB data layer, wired up LLM nodes that call external tools through LangChain, Gemini, and MCP, and moved long-running jobs onto a Redis/BullMQ queue behind a Docker + Jenkins pipeline.",
       tags: ["LangChain", "MCP", "Redis", "Docker"],
-      color: "blue",
+      color: "mint",
       icon: "workflow"
     },
     {
       title: "Working Capital Suite – AI Financial Orchestration",
       description: "A finance automation platform where 16 purpose-built agents cover receivables, payables, treasury, and credit risk. I built the agents behind invoice 3-way matching, payment prioritization, treasury signals, and cash forecasting, tying in OCR and banking APIs so the finance team stops copy-pasting numbers.",
       tags: ["AI Agents", "Node.js", "PostgreSQL", "LLMs"],
-      color: "amber",
+      color: "indigo",
       icon: "chart-bar"
     },
     {
       title: "DocSentra – Healthcare Management Platform",
       description: "Clinical assistant tooling built for doctors, nurses, and technicians, each with their own view into the system. It leans on RBAC and a RAG layer grounded in hospital SOPs to summarize patient history, flag symptoms worth a second look, and support treatment planning without replacing clinical judgment.",
       tags: ["RAG", "RBAC", "FastAPI", "MongoDB"],
-      color: "emerald",
+      color: "mint",
       icon: "heart-pulse"
     },
     {
       title: "Agentic AI Portfolio (20+ AI Agents)",
       description: "A personal lab of 20+ agents, each dropped into a full-stack app to see how far LangGraph orchestration, RAG, MCP, and vector search can go for real automation and document-heavy tasks — the testbed I use before an idea earns a place in production work.",
       tags: ["LangGraph", "RAG", "MCP", "FAISS", "ChromaDB"],
-      color: "purple",
+      color: "indigo",
       icon: "seedling"
     }
   ],
@@ -76,7 +76,7 @@ export const portfolioData = {
     {
       role: "Junior Software Associate",
       company: "SNS Ihub",
-      date: "Sep 2025 – Present",
+      date: "Aug 2025 – Present",
       description: [
         "Helped build Agent Workbench from the data layer up — modeled the PostgreSQL/MongoDB schema and shipped LLM workflow nodes that call tools through LangChain, Gemini, and MCP",
         "Moved background workflow processing onto a Redis/BullMQ queue and got it deploying cleanly through Docker and Jenkins",
@@ -84,19 +84,19 @@ export const portfolioData = {
         "Shipped DocSentra's Clinical Assistance module, pairing RBAC with a RAG pipeline over a MongoDB clinical knowledge base",
         "Built the full-stack pieces behind Procure-to-Pay, Order-to-Cash, and Record-to-Report — invoicing, reconciliation, and the financial reporting on top of it"
       ],
-      color: "blue"
+      color: "mint"
     },
     {
       role: "Software Engineering Intern",
       company: "SNS Ihub",
-      date: "Sep 2025 – Present",
+      date: "Aug 2024 – Jul 2025",
       description: [
         "Wrote 45+ REST APIs in Node.js as part of OKRion's microservices backend, an AI-powered task management platform",
         "Shipped AI modules for automating business-card capture, screening resumes, and verifying LinkedIn articles",
         "Designed the MongoDB schema, tuned slow queries, and hooked up AWS S3 for document storage",
         "Built full-stack pieces of the NAAC Accreditation platform, including AI-assisted QlM generation and SSR/AQAR export"
       ],
-      color: "emerald"
+      color: "indigo"
     }
   ],
 
@@ -114,7 +114,7 @@ export const portfolioData = {
       institution: "KG Matric Hr. Sec School",
       location: "Coimbatore, India",
       date: "2021",
-      score: "88%",
+      score: "89%",
       type: "percentage"
     },
     {
@@ -132,25 +132,25 @@ export const portfolioData = {
       issuer: "Databricks",
       date: "Dec 2025",
       expires: "Dec 2027",
-      color: "emerald"
+      color: "mint"
     },
     {
       title: "AWS Certified Cloud Practitioner (CLF-C02)",
       issuer: "Amazon Web Services",
       date: "Jun 2026",
-      color: "amber"
+      color: "indigo"
     },
     {
       title: "HackerRank Software Engineer Certification",
       issuer: "HackerRank",
       date: "Nov 2024",
-      color: "blue"
+      color: "mint"
     },
     {
       title: "Master in Software Architecture, Engineering and Development",
       issuer: "Udemy",
       date: "Mar 2026",
-      color: "purple"
+      color: "indigo"
     }
   ],
 
@@ -159,37 +159,37 @@ export const portfolioData = {
       title: "Winner – National Entrepreneurship Challenge 2024",
       organization: "Eureka Pitching Competition, IIT Bombay",
       icon: "trophy",
-      color: "blue"
+      color: "mint"
     },
     {
       title: "2 Utility Patents & 1 Design Patent Filed",
       organization: "Innovation & Research",
       icon: "lightbulb",
-      color: "emerald"
+      color: "indigo"
     },
     {
       title: "Spirit of Innovation Award",
       organization: "CMR University, Bangalore, 2023",
       icon: "star",
-      color: "purple"
+      color: "mint"
     },
     {
       title: "Best Paper Award",
       organization: "GENESIS'2K22 (National Conference)",
       icon: "award",
-      color: "amber"
+      color: "indigo"
     },
     {
       title: "Conference Presenter",
       organization: "2 International + 4 National Conferences",
       icon: "presentation",
-      color: "rose"
+      color: "mint"
     },
     {
       title: "Best Speaker Award",
       organization: "PSG College of Technology, 2024",
       icon: "microphone",
-      color: "teal"
+      color: "indigo"
     }
   ]
 };

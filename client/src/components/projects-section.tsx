@@ -24,10 +24,10 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+    <section id="projects" className="py-24 bg-[#0a0d12] relative overflow-hidden">
       <div className="absolute inset-0 noise-overlay" />
-      <div className="absolute top-1/3 -left-32 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]" />
-      <div className="absolute bottom-0 -right-32 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px]" />
+      <div className="absolute top-1/3 -left-32 w-96 h-96 bg-teal-500/[0.08] rounded-full blur-[120px]" />
+      <div className="absolute bottom-0 -right-32 w-96 h-96 bg-indigo-500/[0.08] rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -37,10 +37,10 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-blue-400 font-semibold text-sm tracking-widest uppercase">Portfolio</span>
+          <span className="text-teal-300 font-semibold text-sm tracking-widest uppercase">Portfolio</span>
           <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-3 mb-4">Featured Projects</h2>
           <motion.div
-            className="w-16 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto rounded-full mb-6"
+            className="w-16 h-1 bg-gradient-to-r from-teal-300 to-indigo-400 mx-auto rounded-full mb-6"
             initial={{ width: 0 }}
             whileInView={{ width: "4rem" }}
             viewport={{ once: true }}

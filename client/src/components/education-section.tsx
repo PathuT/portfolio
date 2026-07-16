@@ -14,9 +14,9 @@ const achievementIcons = {
 
 export default function EducationSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+    <section className="py-24 bg-[#0a0d12] relative overflow-hidden">
       <div className="absolute inset-0 noise-overlay" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-[120px]" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/[0.08] rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -28,8 +28,8 @@ export default function EducationSection() {
             transition={{ duration: 0.7 }}
           >
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-blue-400" />
+              <div className="w-10 h-10 rounded-xl bg-teal-400/10 border border-teal-400/25 flex items-center justify-center">
+                <GraduationCap className="w-5 h-5 text-teal-300" />
               </div>
               <h2 className="text-2xl md:text-3xl font-bold font-display text-white">Education</h2>
             </div>
@@ -47,12 +47,12 @@ export default function EducationSection() {
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <h3 className="text-base font-bold text-white leading-snug">{edu.degree}</h3>
-                      <p className="text-blue-400 font-medium text-sm mt-1">{edu.institution}</p>
+                      <p className="text-teal-300 font-medium text-sm mt-1">{edu.institution}</p>
                       {edu.location && <p className="text-slate-500 text-xs mt-0.5">{edu.location}</p>}
                     </div>
                     <div className="text-right flex-shrink-0">
-                      <span className="text-xs text-slate-500">{edu.date}</span>
-                      <div className="text-base font-bold text-emerald-400 mt-0.5">{edu.score}</div>
+                      <span className="font-mono-tech text-xs text-slate-500">{edu.date}</span>
+                      <div className="text-base font-bold text-indigo-300 mt-0.5 tabular-nums">{edu.score}</div>
                     </div>
                   </div>
                 </motion.div>
@@ -68,8 +68,8 @@ export default function EducationSection() {
             transition={{ duration: 0.7, delay: 0.1 }}
           >
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center">
-                <BadgeCheck className="w-5 h-5 text-emerald-400" />
+              <div className="w-10 h-10 rounded-xl bg-indigo-400/10 border border-indigo-400/25 flex items-center justify-center">
+                <BadgeCheck className="w-5 h-5 text-indigo-300" />
               </div>
               <h2 className="text-2xl md:text-3xl font-bold font-display text-white">Certifications</h2>
             </div>
@@ -109,7 +109,7 @@ export default function EducationSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <span className="text-amber-400 font-semibold text-sm tracking-widest uppercase">Recognition</span>
+            <span className="text-teal-300 font-semibold text-sm tracking-widest uppercase">Recognition</span>
             <h2 className="text-2xl md:text-3xl font-bold font-display text-white mt-3">Achievements</h2>
           </motion.div>
 

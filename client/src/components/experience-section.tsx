@@ -1,13 +1,12 @@
 import { portfolioData } from "@/data/portfolio-data";
-import { Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 import { accent } from "@/lib/colors";
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="py-24 bg-gradient-to-b from-white via-slate-50 to-white relative overflow-hidden">
-      <div className="absolute top-32 left-16 w-20 h-20 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full blur-2xl opacity-40" />
-      <div className="absolute bottom-40 right-24 w-16 h-16 bg-gradient-to-br from-purple-100 to-blue-100 rounded-full blur-xl opacity-30" />
+    <section id="experience" className="py-24 bg-[#0b0e13] relative overflow-hidden">
+      <div className="absolute top-32 left-16 w-20 h-20 bg-teal-500/[0.06] rounded-full blur-2xl" />
+      <div className="absolute bottom-40 right-24 w-16 h-16 bg-indigo-500/[0.06] rounded-full blur-xl" />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -17,10 +16,10 @@ export default function ExperienceSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-blue-600 font-semibold text-sm tracking-widest uppercase">Career</span>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-slate-900 mt-3 mb-4">Professional Experience</h2>
+          <span className="text-teal-300 font-semibold text-sm tracking-widest uppercase">Career</span>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-3 mb-4">Professional Experience</h2>
           <motion.div
-            className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 mx-auto rounded-full"
+            className="w-16 h-1 bg-gradient-to-r from-teal-300 to-indigo-400 mx-auto rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: "4rem" }}
             viewport={{ once: true }}
@@ -29,7 +28,7 @@ export default function ExperienceSection() {
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-blue-300 via-indigo-300 to-transparent" />
+          <div className="absolute left-[.3rem] top-2 bottom-2 w-px bg-white/10" />
 
           <div className="space-y-10">
             {portfolioData.experience.map((exp, index) => {
@@ -37,25 +36,24 @@ export default function ExperienceSection() {
               return (
                 <motion.div
                   key={index}
-                  className="relative pl-16"
+                  className="relative pl-10"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.15 }}
                 >
-                  <div
-                    className={`absolute left-0 w-12 h-12 rounded-2xl bg-gradient-to-br ${tokens.gradient} shadow-lg flex items-center justify-center border-4 border-white`}
-                  >
-                    <Briefcase className="w-5 h-5 text-white" />
-                  </div>
+                  <span
+                    className={`absolute left-0 top-2 w-2.5 h-2.5 rounded-full ${tokens.dot}`}
+                    style={{ boxShadow: `0 0 0 4px ${tokens.solidFrom}26` }}
+                  />
 
-                  <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 p-7 border border-slate-100">
+                  <div className="bg-white/[0.03] rounded-2xl transition-colors duration-300 p-7 border border-white/10 hover:border-white/20">
                     <div className="flex flex-col sm:flex-row justify-between items-start gap-3 mb-5">
                       <div>
-                        <h3 className="text-xl font-bold text-slate-900">{exp.role}</h3>
+                        <h3 className="text-xl font-bold text-white">{exp.role}</h3>
                         <p className={`font-semibold ${tokens.text}`}>{exp.company}</p>
                       </div>
-                      <span className={`text-xs font-medium px-3 py-1.5 rounded-full whitespace-nowrap ${tokens.softBg} ${tokens.text}`}>
+                      <span className="font-mono-tech text-xs font-medium text-slate-400 uppercase tracking-wide whitespace-nowrap">
                         {exp.date}
                       </span>
                     </div>
@@ -64,7 +62,7 @@ export default function ExperienceSection() {
                       {exp.description.map((item, itemIndex) => (
                         <div key={itemIndex} className="flex items-start gap-3">
                           <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${tokens.dot}`} />
-                          <span className="text-slate-600 leading-relaxed text-sm">{item}</span>
+                          <span className="text-slate-400 leading-relaxed text-sm">{item}</span>
                         </div>
                       ))}
                     </div>
