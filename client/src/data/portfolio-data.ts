@@ -11,9 +11,9 @@ export const portfolioData = {
 
   about: {
     summary: [
-      "Two years into my engineering journey, I've moved from intern to full-time engineer at a product company — shipping real features, not just tickets.",
+      "Two years into my engineering journey, I've moved from intern to full-time engineer at a product company - shipping real features, not just tickets.",
       "My day-to-day spans the whole stack: Next.js and React on the front, Node.js, Express, and FastAPI underneath, with MongoDB and PostgreSQL holding the data. I like wiring in AI where it actually earns its keep and breaking monoliths into microservices that are easier to reason about.",
-      "Beyond the code, I care about the plumbing that keeps it running — AWS, Docker, Jenkins, CI/CD — and about writing software a teammate can pick up six months later without cursing my name."
+      "Beyond the code, I care about the plumbing that keeps it running - AWS, Docker, Jenkins, CI/CD - and about writing software a teammate can pick up six months later without cursing my name."
     ],
     stats: [
       { value: "45+", label: "APIs Deployed" },
@@ -65,7 +65,7 @@ export const portfolioData = {
     },
     {
       title: "Agentic AI Portfolio (20+ AI Agents)",
-      description: "A personal lab of 20+ agents, each dropped into a full-stack app to see how far LangGraph orchestration, RAG, MCP, and vector search can go for real automation and document-heavy tasks — the testbed I use before an idea earns a place in production work.",
+      description: "A personal lab of 20+ agents, each dropped into a full-stack app to see how far LangGraph orchestration, RAG, MCP, and vector search can go for real automation and document-heavy tasks - the testbed I use before an idea earns a place in production work.",
       tags: ["LangGraph", "RAG", "MCP", "FAISS", "ChromaDB"],
       color: "indigo",
       icon: "seedling"
@@ -78,11 +78,11 @@ export const portfolioData = {
       company: "SNS Ihub",
       date: "Aug 2025 – Present",
       description: [
-        "Helped build Agent Workbench from the data layer up — modeled the PostgreSQL/MongoDB schema and shipped LLM workflow nodes that call tools through LangChain, Gemini, and MCP",
+        "Helped build Agent Workbench from the data layer up - modeled the PostgreSQL/MongoDB schema and shipped LLM workflow nodes that call tools through LangChain, Gemini, and MCP",
         "Moved background workflow processing onto a Redis/BullMQ queue and got it deploying cleanly through Docker and Jenkins",
-        "Built out 16 AI agents for the Working Capital Suite covering receivables, payables, treasury, and credit risk — automating invoice intake, forex revaluation, and cash forecasting that used to be manual",
+        "Built out 16 AI agents for the Working Capital Suite covering receivables, payables, treasury, and credit risk - automating invoice intake, forex revaluation, and cash forecasting that used to be manual",
         "Shipped DocSentra's Clinical Assistance module, pairing RBAC with a RAG pipeline over a MongoDB clinical knowledge base",
-        "Built the full-stack pieces behind Procure-to-Pay, Order-to-Cash, and Record-to-Report — invoicing, reconciliation, and the financial reporting on top of it"
+        "Built the full-stack pieces behind Procure-to-Pay, Order-to-Cash, and Record-to-Report - invoicing, reconciliation, and the financial reporting on top of it"
       ],
       color: "mint"
     },

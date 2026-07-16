@@ -69,7 +69,7 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Outfit', ui-sans-serif, sans-serif;
+    font-family: 'Space Grotesk', 'Outfit', ui-sans-serif, sans-serif;
   }
 
   .font-mono-tech {

@@ -3,6 +3,7 @@ import { ChevronDown, Download, ArrowRight, Sparkles, MapPin, Code2, CalendarClo
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
+import CountUp from "@/components/count-up";
 
 const initials = portfolioData.name
   .split(" ")
@@ -38,7 +39,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center bg-[#0a0d12] overflow-hidden pt-24 pb-16"
+      className="relative min-h-screen flex items-center bg-white dark:bg-[#0a0d12] overflow-hidden pt-24 pb-16"
     >
       {/* Base gradient wash */}
       <div className="absolute inset-0 bg-[radial-gradient(60rem_30rem_at_85%_-10%,rgba(94,234,212,0.10),transparent_60%),radial-gradient(50rem_30rem_at_-10%_20%,rgba(129,140,248,0.12),transparent_55%)]" />
@@ -83,21 +84,21 @@ export default function HeroSection() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-300 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-300" />
               </span>
-              <span className="text-teal-300 text-sm font-medium">Open to new opportunities</span>
+              <span className="text-teal-700 dark:text-teal-300 text-sm font-medium">Open to new opportunities</span>
             </motion.div>
 
             <motion.h1
-              className="font-display font-bold text-white leading-[1.05] mb-6 text-4xl sm:text-5xl lg:text-6xl tracking-tight"
+              className="font-display font-bold text-slate-900 dark:text-white leading-[1.05] mb-6 text-4xl sm:text-5xl lg:text-6xl tracking-tight"
               variants={itemVariants}
             >
               Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-teal-300 to-indigo-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-teal-600 to-indigo-500 dark:from-teal-300 dark:to-indigo-400 bg-clip-text text-transparent">
                 {portfolioData.name}
               </span>
             </motion.h1>
 
             <motion.div
-              className="text-xl sm:text-2xl text-slate-300 font-medium mb-6 h-9"
+              className="text-xl sm:text-2xl text-slate-600 dark:text-slate-300 font-medium mb-6 h-9"
               variants={itemVariants}
             >
               <Typewriter
@@ -117,10 +118,10 @@ export default function HeroSection() {
             </motion.div>
 
             <motion.p
-              className="text-base sm:text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10"
+              className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-10"
               variants={itemVariants}
             >
-              I build <span className="text-slate-200 font-medium">scalable, secure, high-performance</span> software —
+              I build <span className="text-slate-800 dark:text-slate-200 font-medium">scalable, secure, high-performance</span> software -
               blending full stack engineering, agentic AI, and cloud-native architecture into products that ship.
             </motion.p>
 
@@ -130,7 +131,7 @@ export default function HeroSection() {
             >
               <motion.button
                 onClick={handleScrollToContact}
-                className="inline-flex items-center justify-center gap-2 bg-white text-[#0a0d12] px-7 py-3.5 rounded-xl font-semibold shadow-lg shadow-black/20 hover:bg-slate-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-slate-900 text-white dark:bg-white dark:text-[#0a0d12] px-7 py-3.5 rounded-xl font-semibold shadow-lg shadow-black/10 dark:shadow-black/20 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors"
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 data-testid="button-contact-me"
@@ -140,18 +141,18 @@ export default function HeroSection() {
               </motion.button>
               <motion.button
                 onClick={handleScrollToProjects}
-                className="inline-flex items-center justify-center gap-2 border border-white/15 text-slate-200 px-7 py-3.5 rounded-xl font-semibold hover:bg-white/5 hover:border-white/25 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border border-slate-300 dark:border-white/15 text-slate-700 dark:text-slate-200 px-7 py-3.5 rounded-xl font-semibold hover:bg-slate-100 dark:hover:bg-white/5 hover:border-slate-400 dark:hover:border-white/25 transition-colors"
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
               >
-                <Sparkles className="w-4 h-4 text-teal-300" />
+                <Sparkles className="w-4 h-4 text-teal-600 dark:text-teal-300" />
                 View Work
               </motion.button>
               <motion.a
                 href={portfolioData.resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 text-slate-300 px-4 py-3.5 font-medium hover:text-white transition-colors"
+                className="inline-flex items-center justify-center gap-2 text-slate-600 dark:text-slate-300 px-4 py-3.5 font-medium hover:text-slate-900 dark:hover:text-white transition-colors"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
                 data-testid="button-download-resume"
@@ -169,7 +170,7 @@ export default function HeroSection() {
                 (skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-slate-300 text-xs font-medium hover:border-teal-400/30 hover:text-teal-300 transition-colors"
+                    className="px-3 py-1.5 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full text-slate-600 dark:text-slate-300 text-xs font-medium hover:border-teal-400/40 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
                   >
                     {skill}
                   </span>
@@ -185,19 +186,19 @@ export default function HeroSection() {
                 href={portfolioData.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 rounded-full flex items-center justify-center transition-colors"
+                className="w-11 h-11 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/10 hover:border-slate-300 dark:hover:border-white/20 rounded-full flex items-center justify-center transition-colors"
                 data-testid="link-github"
               >
-                <FaGithub className="text-white text-lg" />
+                <FaGithub className="text-slate-800 dark:text-white text-lg" />
               </a>
               <a
                 href={portfolioData.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/5 border border-white/10 hover:bg-indigo-400/20 hover:border-indigo-400/30 rounded-full flex items-center justify-center transition-colors"
+                className="w-11 h-11 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-indigo-100 dark:hover:bg-indigo-400/20 hover:border-indigo-300 dark:hover:border-indigo-400/30 rounded-full flex items-center justify-center transition-colors"
                 data-testid="link-linkedin"
               >
-                <FaLinkedin className="text-white text-lg" />
+                <FaLinkedin className="text-slate-800 dark:text-white text-lg" />
               </a>
             </motion.div>
           </motion.div>
@@ -211,7 +212,7 @@ export default function HeroSection() {
           >
             <div className="relative w-full max-w-sm">
               <div className="absolute -inset-4 bg-gradient-to-br from-teal-400/15 to-indigo-500/15 rounded-[2rem] blur-2xl" />
-              <div className="relative bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-[2rem] p-8 shadow-2xl">
+              <div className="relative bg-white dark:bg-white/[0.04] backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-[2rem] p-8 shadow-xl dark:shadow-2xl">
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-5">
                     <motion.div
@@ -222,17 +223,17 @@ export default function HeroSection() {
                     <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-teal-400 to-indigo-500 flex items-center justify-center border-4 border-[#0a0d12] shadow-xl">
                       <span className="font-display text-3xl font-bold text-[#0a0d12]">{initials}</span>
                     </div>
-                    <span className="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-teal-300 border-4 border-[#0a0d12]" />
+                    <span className="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-teal-300 border-4 border-white dark:border-[#0a0d12]" />
                   </div>
 
-                  <h3 className="text-white font-display font-bold text-xl mb-1.5">{portfolioData.name}</h3>
-                  <p className="text-slate-400 text-sm font-medium mb-2">{portfolioData.roleTitle}</p>
+                  <h3 className="text-slate-900 dark:text-white font-display font-bold text-xl mb-1.5">{portfolioData.name}</h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm font-medium mb-2">{portfolioData.roleTitle}</p>
                   <div className="inline-flex items-center gap-1.5 text-slate-500 text-xs mb-6">
                     <MapPin className="w-3.5 h-3.5" />
                     {portfolioData.location}
                   </div>
 
-                  <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6" />
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent mb-6" />
 
                   <div className="grid grid-cols-2 gap-3 w-full">
                     {portfolioData.about.stats.map((stat, index) => {
@@ -240,12 +241,14 @@ export default function HeroSection() {
                       return (
                         <motion.div
                           key={stat.label}
-                          className="bg-white/[0.03] border border-white/10 rounded-xl py-4 px-3 text-left hover:bg-white/[0.06] hover:border-white/20 transition-colors"
+                          className="bg-slate-50 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 rounded-xl py-4 px-3 text-left hover:bg-slate-100 dark:hover:bg-white/[0.06] hover:border-slate-300 dark:hover:border-white/20 transition-colors"
                           whileHover={{ y: -2 }}
                         >
-                          <StatIcon className={`w-4 h-4 mb-2 ${index % 2 === 0 ? "text-teal-300" : "text-indigo-300"}`} />
-                          <div className="text-xl font-bold text-white font-display leading-none tabular-nums">{stat.value}</div>
-                          <div className="text-[10px] uppercase tracking-wide text-slate-400 mt-1.5 leading-tight">
+                          <StatIcon className={`w-4 h-4 mb-2 ${index % 2 === 0 ? "text-teal-600 dark:text-teal-300" : "text-indigo-600 dark:text-indigo-300"}`} />
+                          <div className="text-xl font-bold text-slate-900 dark:text-white font-display leading-none tabular-nums">
+                            <CountUp value={stat.value} />
+                          </div>
+                          <div className="text-[10px] uppercase tracking-wide text-slate-500 dark:text-slate-400 mt-1.5 leading-tight">
                             {stat.label}
                           </div>
                         </motion.div>
@@ -261,7 +264,7 @@ export default function HeroSection() {
 
       <motion.button
         onClick={handleScrollToProjects}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/40 hover:text-white/70 transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-400 dark:text-white/40 hover:text-slate-700 dark:hover:text-white/70 transition-colors"
         animate={{ y: [0, 8, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         aria-label="Scroll to projects"

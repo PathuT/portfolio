@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0a0d12] py-8 border-t border-white/[0.08]">
+    <footer className="bg-white dark:bg-[#0a0d12] py-8 border-t border-slate-200 dark:border-white/[0.08]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-slate-500 text-sm text-center md:text-left">
@@ -18,19 +18,19 @@ export default function Footer() {
               href={portfolioData.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full flex items-center justify-center transition-colors"
+              className="w-9 h-9 bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 rounded-full flex items-center justify-center transition-colors"
               aria-label="GitHub"
             >
-              <FaGithub className="text-slate-300 text-sm" />
+              <FaGithub className="text-slate-700 dark:text-slate-300 text-sm" />
             </a>
             <a
               href={portfolioData.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full flex items-center justify-center transition-colors"
+              className="w-9 h-9 bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 rounded-full flex items-center justify-center transition-colors"
               aria-label="LinkedIn"
             >
-              <FaLinkedin className="text-slate-300 text-sm" />
+              <FaLinkedin className="text-slate-700 dark:text-slate-300 text-sm" />
             </a>
           </div>
 

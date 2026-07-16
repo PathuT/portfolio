@@ -24,8 +24,9 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="projects" className="py-24 bg-[#0a0d12] relative overflow-hidden">
+    <section id="projects" className="py-24 bg-white dark:bg-[#0a0d12] relative overflow-hidden">
       <div className="absolute inset-0 noise-overlay" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent" />
       <div className="absolute top-1/3 -left-32 w-96 h-96 bg-teal-500/[0.08] rounded-full blur-[120px]" />
       <div className="absolute bottom-0 -right-32 w-96 h-96 bg-indigo-500/[0.08] rounded-full blur-[120px]" />
 
@@ -37,16 +38,16 @@ export default function ProjectsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-teal-300 font-semibold text-sm tracking-widest uppercase">Portfolio</span>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-3 mb-4">Featured Projects</h2>
+          <span className="text-teal-700 dark:text-teal-300 font-semibold text-sm tracking-widest uppercase">Portfolio</span>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-slate-900 dark:text-white mt-3 mb-4">Featured Projects</h2>
           <motion.div
-            className="w-16 h-1 bg-gradient-to-r from-teal-300 to-indigo-400 mx-auto rounded-full mb-6"
+            className="w-16 h-1 bg-gradient-to-r from-teal-600 to-indigo-500 dark:from-teal-300 dark:to-indigo-400 mx-auto rounded-full mb-6"
             initial={{ width: 0 }}
             whileInView={{ width: "4rem" }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           />
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Showcasing solutions that blend AI, automation, and scalable engineering
           </p>
         </motion.div>
@@ -65,7 +66,7 @@ export default function ProjectsSection() {
             return (
               <motion.div
                 key={index}
-                className="group relative bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-7 hover:border-white/20 transition-colors duration-300"
+                className="group relative bg-white dark:bg-white/[0.03] backdrop-blur-sm border border-slate-200 dark:border-white/10 rounded-2xl p-7 hover:border-slate-300 dark:hover:border-white/20 shadow-sm dark:shadow-none transition-colors duration-300"
                 data-testid={`project-card-${index}`}
                 variants={itemVariants}
                 whileHover={{ y: -6 }}
@@ -82,8 +83,8 @@ export default function ProjectsSection() {
                   </div>
                 </div>
 
-                <h3 className="relative text-xl font-bold text-white mb-3 leading-snug">{project.title}</h3>
-                <p className="relative text-slate-400 mb-5 leading-relaxed text-sm">{project.description}</p>
+                <h3 className="relative text-xl font-bold text-slate-900 dark:text-white mb-3 leading-snug">{project.title}</h3>
+                <p className="relative text-slate-600 dark:text-slate-400 mb-5 leading-relaxed text-sm">{project.description}</p>
 
                 <div className="relative flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (

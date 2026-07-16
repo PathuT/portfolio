@@ -2,6 +2,7 @@ import { portfolioData } from "@/data/portfolio-data";
 import { motion } from "framer-motion";
 import { Code, Database, Cloud } from "lucide-react";
 import { accent } from "@/lib/colors";
+import CountUp from "@/components/count-up";
 
 const categoryIcons: Record<string, typeof Code> = {
   "Full Stack Development": Code,
@@ -21,7 +22,8 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-24 bg-[#0b0e13] relative overflow-hidden">
+    <section id="about" className="py-24 bg-slate-50 dark:bg-[#0b0e13] relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent" />
       <div className="absolute top-24 right-10 w-72 h-72 bg-teal-500/[0.06] rounded-full blur-[100px]" />
       <div className="absolute bottom-10 left-10 w-56 h-56 bg-indigo-500/[0.06] rounded-full blur-[100px]" />
 
@@ -33,10 +35,10 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-teal-300 font-semibold text-sm tracking-widest uppercase">Get to know me</span>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-3 mb-4">About Me</h2>
+          <span className="text-teal-700 dark:text-teal-300 font-semibold text-sm tracking-widest uppercase">Get to know me</span>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-slate-900 dark:text-white mt-3 mb-4">About Me</h2>
           <motion.div
-            className="w-16 h-1 bg-gradient-to-r from-teal-300 to-indigo-400 mx-auto rounded-full"
+            className="w-16 h-1 bg-gradient-to-r from-teal-600 to-indigo-500 dark:from-teal-300 dark:to-indigo-400 mx-auto rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: "4rem" }}
             viewport={{ once: true }}
@@ -53,10 +55,10 @@ export default function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold font-display text-white mb-5 leading-snug">
+            <h3 className="text-2xl md:text-3xl font-bold font-display text-slate-900 dark:text-white mb-5 leading-snug">
               Building tomorrow's technology, today
             </h3>
-            <div className="space-y-4 text-slate-400 text-lg leading-relaxed">
+            <div className="space-y-4 text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
               {portfolioData.about.summary.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
@@ -74,12 +76,14 @@ export default function AboutSection() {
             {portfolioData.about.stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="text-center p-6 bg-white/[0.03] rounded-2xl border border-white/10 hover:border-white/20 transition-colors duration-300"
+                className="text-center p-6 bg-white dark:bg-white/[0.03] rounded-2xl border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 transition-colors duration-300"
                 variants={itemVariants}
                 whileHover={{ scale: 1.03, y: -3 }}
               >
-                <div className={`text-3xl font-bold font-display mb-1 tabular-nums ${index % 2 === 0 ? "text-teal-300" : "text-indigo-300"}`}>{stat.value}</div>
-                <div className="text-sm font-medium text-slate-400">{stat.label}</div>
+                <div className={`text-3xl font-bold font-display mb-1 tabular-nums ${index % 2 === 0 ? "text-teal-600 dark:text-teal-300" : "text-indigo-600 dark:text-indigo-300"}`}>
+                  <CountUp value={stat.value} />
+                </div>
+                <div className="text-sm font-medium text-slate-600 dark:text-slate-400">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -93,7 +97,7 @@ export default function AboutSection() {
             return (
               <motion.div
                 key={groupIndex}
-                className="bg-white/[0.03] rounded-2xl transition-all duration-300 p-6 border border-white/10 hover:border-white/20"
+                className="bg-white dark:bg-white/[0.03] rounded-2xl transition-all duration-300 p-6 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 shadow-sm dark:shadow-none"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -104,17 +108,17 @@ export default function AboutSection() {
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${tokens.softBg} border ${tokens.softBorder}`}>
                     <IconComponent className={`w-6 h-6 ${tokens.text}`} />
                   </div>
-                  <h4 className="text-lg font-bold text-white">{skillGroup.category}</h4>
+                  <h4 className="text-lg font-bold text-slate-900 dark:text-white">{skillGroup.category}</h4>
                 </div>
 
                 <div className="space-y-2.5">
                   {skillGroup.items.map((skill, skillIndex) => (
                     <div
                       key={skillIndex}
-                      className="flex items-center p-2 rounded-lg hover:bg-white/[0.04] transition-colors duration-200 group"
+                      className="flex items-center p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-white/[0.04] transition-colors duration-200 group"
                     >
                       <div className={`w-1.5 h-1.5 rounded-full mr-3 group-hover:scale-125 transition-transform duration-200 ${tokens.dot}`} />
-                      <span className="text-slate-300 font-medium text-sm">{skill}</span>
+                      <span className="text-slate-700 dark:text-slate-300 font-medium text-sm">{skill}</span>
                     </div>
                   ))}
                 </div>

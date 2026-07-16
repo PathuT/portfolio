@@ -19,9 +19,9 @@ interface ContactFormData {
 }
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: () => portfolioData.email, color: "bg-teal-400/10 text-teal-300 border border-teal-400/25" },
-  { icon: Phone, label: "Phone", value: () => portfolioData.phone, color: "bg-indigo-400/10 text-indigo-300 border border-indigo-400/25" },
-  { icon: MapPin, label: "Location", value: () => portfolioData.location, color: "bg-teal-400/10 text-teal-300 border border-teal-400/25" },
+  { icon: Mail, label: "Email", value: () => portfolioData.email, color: "bg-teal-500/10 dark:bg-teal-400/10 text-teal-600 dark:text-teal-300 border border-teal-500/25 dark:border-teal-400/25" },
+  { icon: Phone, label: "Phone", value: () => portfolioData.phone, color: "bg-indigo-500/10 dark:bg-indigo-400/10 text-indigo-600 dark:text-indigo-300 border border-indigo-500/25 dark:border-indigo-400/25" },
+  { icon: MapPin, label: "Location", value: () => portfolioData.location, color: "bg-teal-500/10 dark:bg-teal-400/10 text-teal-600 dark:text-teal-300 border border-teal-500/25 dark:border-teal-400/25" },
 ];
 
 export default function ContactSection() {
@@ -66,7 +66,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#0b0e13] relative overflow-hidden">
+    <section id="contact" className="py-24 bg-slate-50 dark:bg-[#0b0e13] relative overflow-hidden">
       <div className="absolute top-20 right-20 w-72 h-72 bg-teal-500/[0.06] rounded-full blur-[100px]" />
       <div className="absolute bottom-20 left-20 w-56 h-56 bg-indigo-500/[0.06] rounded-full blur-[100px]" />
 
@@ -78,10 +78,10 @@ export default function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-teal-300 font-semibold text-sm tracking-widest uppercase">Get in touch</span>
-          <h2 className="text-3xl md:text-4xl font-bold font-display text-white mt-3 mb-4">Let's Connect</h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-teal-300 to-indigo-400 mx-auto rounded-full mb-6" />
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+          <span className="text-teal-700 dark:text-teal-300 font-semibold text-sm tracking-widest uppercase">Get in touch</span>
+          <h2 className="text-3xl md:text-4xl font-bold font-display text-slate-900 dark:text-white mt-3 mb-4">Let's Connect</h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-600 to-indigo-500 dark:from-teal-300 dark:to-indigo-400 mx-auto rounded-full mb-6" />
+          <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             Ready to collaborate on innovative projects or discuss exciting opportunities? I'd love to hear from you.
           </p>
         </motion.div>
@@ -95,49 +95,49 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="bg-white/[0.03] rounded-lg border border-white/10 p-6 space-y-5">
-              <h3 className="text-lg font-bold text-white">Get In Touch</h3>
+            <div className="bg-white dark:bg-white/[0.03] rounded-lg border border-slate-200 dark:border-white/10 shadow-sm dark:shadow-none p-6 space-y-5">
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">Get In Touch</h3>
               {contactInfo.map((item) => (
                 <div key={item.label} className="flex items-center gap-4">
                   <div className={`w-11 h-11 rounded-full flex items-center justify-center flex-shrink-0 ${item.color}`}>
                     <item.icon className="w-5 h-5" />
                   </div>
                   <div className="min-w-0">
-                    <p className="text-white font-medium text-sm">{item.label}</p>
-                    <p className="text-slate-400 text-sm truncate">{item.value()}</p>
+                    <p className="text-slate-900 dark:text-white font-medium text-sm">{item.label}</p>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm truncate">{item.value()}</p>
                   </div>
                 </div>
               ))}
 
-              <div className="pt-2 border-t border-white/10">
-                <h4 className="text-sm font-semibold text-white mb-3">Connect on Social</h4>
+              <div className="pt-2 border-t border-slate-200 dark:border-white/10">
+                <h4 className="text-sm font-semibold text-slate-900 dark:text-white mb-3">Connect on Social</h4>
                 <div className="flex gap-3">
                   <motion.a
                     href={portfolioData.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-11 h-11 bg-white/5 border border-white/10 hover:bg-indigo-400/20 hover:border-indigo-400/30 rounded-full flex items-center justify-center transition-colors"
+                    className="w-11 h-11 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-indigo-100 dark:hover:bg-indigo-400/20 hover:border-indigo-300 dark:hover:border-indigo-400/30 rounded-full flex items-center justify-center transition-colors"
                     data-testid="link-linkedin-contact"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <FaLinkedin className="text-white w-5 h-5" />
+                    <FaLinkedin className="text-slate-800 dark:text-white w-5 h-5" />
                   </motion.a>
                   <motion.a
                     href={portfolioData.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-11 h-11 bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 rounded-full flex items-center justify-center transition-colors"
+                    className="w-11 h-11 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/10 hover:border-slate-300 dark:hover:border-white/20 rounded-full flex items-center justify-center transition-colors"
                     data-testid="link-github-contact"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <FaGithub className="text-white w-5 h-5" />
+                    <FaGithub className="text-slate-800 dark:text-white w-5 h-5" />
                   </motion.a>
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 pt-2 border-t border-white/10 text-teal-300 text-sm font-medium">
+              <div className="flex items-center gap-2 pt-2 border-t border-slate-200 dark:border-white/10 text-teal-700 dark:text-teal-300 text-sm font-medium">
                 <CheckCircle2 className="w-4 h-4" />
                 Usually responds within 24 hours
               </div>
@@ -146,18 +146,18 @@ export default function ContactSection() {
 
           {/* Contact Form */}
           <motion.div
-            className="lg:col-span-3 bg-white/[0.03] rounded-lg border border-white/10 p-7"
+            className="lg:col-span-3 bg-white dark:bg-white/[0.03] rounded-lg border border-slate-200 dark:border-white/10 shadow-sm dark:shadow-none p-7"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <h3 className="text-lg font-bold text-white mb-6">Send a Message</h3>
+            <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6">Send a Message</h3>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <Label htmlFor="name" className="text-slate-300 mb-2 block text-sm">
+                  <Label htmlFor="name" className="text-slate-700 dark:text-slate-300 mb-2 block text-sm">
                     Name
                   </Label>
                   <Input
@@ -166,7 +166,7 @@ export default function ContactSection() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full bg-white/5 border-white/10 text-white placeholder-slate-500 focus:ring-2 focus:ring-teal-400/50 focus:border-teal-400/50"
+                    className="w-full bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-teal-500/40 dark:focus:ring-teal-400/50 focus:border-teal-500/50 dark:focus:border-teal-400/50"
                     placeholder="Your Name"
                     required
                     data-testid="input-name"
@@ -174,7 +174,7 @@ export default function ContactSection() {
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="text-slate-300 mb-2 block text-sm">
+                  <Label htmlFor="email" className="text-slate-700 dark:text-slate-300 mb-2 block text-sm">
                     Email
                   </Label>
                   <Input
@@ -183,7 +183,7 @@ export default function ContactSection() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-white/5 border-white/10 text-white placeholder-slate-500 focus:ring-2 focus:ring-teal-400/50 focus:border-teal-400/50"
+                    className="w-full bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-teal-500/40 dark:focus:ring-teal-400/50 focus:border-teal-500/50 dark:focus:border-teal-400/50"
                     placeholder="your.email@example.com"
                     required
                     data-testid="input-email"
@@ -192,7 +192,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <Label htmlFor="subject" className="text-slate-300 mb-2 block text-sm">
+                <Label htmlFor="subject" className="text-slate-700 dark:text-slate-300 mb-2 block text-sm">
                   Subject
                 </Label>
                 <Input
@@ -201,7 +201,7 @@ export default function ContactSection() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full bg-white/5 border-white/10 text-white placeholder-slate-500 focus:ring-2 focus:ring-teal-400/50 focus:border-teal-400/50"
+                  className="w-full bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-teal-500/40 dark:focus:ring-teal-400/50 focus:border-teal-500/50 dark:focus:border-teal-400/50"
                   placeholder="What's this about?"
                   required
                   data-testid="input-subject"
@@ -209,7 +209,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <Label htmlFor="message" className="text-slate-300 mb-2 block text-sm">
+                <Label htmlFor="message" className="text-slate-700 dark:text-slate-300 mb-2 block text-sm">
                   Message
                 </Label>
                 <Textarea
@@ -218,7 +218,7 @@ export default function ContactSection() {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={5}
-                  className="w-full bg-white/5 border-white/10 text-white placeholder-slate-500 focus:ring-2 focus:ring-teal-400/50 focus:border-teal-400/50 resize-none"
+                  className="w-full bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:ring-2 focus:ring-teal-500/40 dark:focus:ring-teal-400/50 focus:border-teal-500/50 dark:focus:border-teal-400/50 resize-none"
                   placeholder="Tell me about your project or opportunity..."
                   required
                   data-testid="textarea-message"
@@ -228,7 +228,7 @@ export default function ContactSection() {
               <Button
                 type="submit"
                 disabled={contactMutation.isPending}
-                className="w-full bg-white text-[#0a0d12] font-semibold hover:bg-slate-100 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-slate-900 text-white dark:bg-white dark:text-[#0a0d12] font-semibold hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 data-testid="button-send-message"
               >
                 {contactMutation.isPending ? (
