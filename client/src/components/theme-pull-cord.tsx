@@ -6,13 +6,14 @@ import {
   useTransform,
   useAnimation,
   useReducedMotion,
-  type PanInfo,
+  animate,
 } from "framer-motion";
 import { Sun, Moon } from "lucide-react";
 import { useTheme } from "@/hooks/use-theme";
 
 const MAX_PULL = 44;
 const PULL_THRESHOLD = 26;
+const TAP_THRESHOLD = 6;
 
 // A gentle damped-pendulum decay: a few shrinking swings settling back to rest.
 const NUDGE_KEYFRAMES = [0, 7, -4.5, 2.8, -1.6, 0.8, 0];
@@ -27,6 +28,8 @@ export default function ThemePullCord() {
   const prefersReducedMotion = useReducedMotion();
   const nudge = useAnimation();
   const hasMounted = useRef(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const startYRef = useRef<number | null>(null);
 
   const playNudge = () => {
     if (prefersReducedMotion) return;
@@ -72,20 +75,52 @@ export default function ThemePullCord() {
     window.sessionStorage.setItem("cordTipSeen", "1");
   };
 
-  const handleDragEnd = (_: PointerEvent | MouseEvent | TouchEvent, info: PanInfo) => {
-    setPulling(false);
-    playNudge();
-    if (info.offset.y > PULL_THRESHOLD) {
-      dismissTip();
-      toggleTheme();
-    }
-  };
+  // Manual pointer handling (mouse + touch + pen) via native listeners and
+  // setPointerCapture, rather than a gesture library's drag recognizer —
+  // this is the part that has to work reliably on real phones.
+  useEffect(() => {
+    const el = buttonRef.current;
+    if (!el) return;
 
-  const handleTap = () => {
-    dismissTip();
-    playNudge();
-    toggleTheme();
-  };
+    const handlePointerDown = (e: PointerEvent) => {
+      startYRef.current = e.clientY;
+      el.setPointerCapture(e.pointerId);
+      setPulling(true);
+      setShowTip(true);
+    };
+
+    const handlePointerMove = (e: PointerEvent) => {
+      if (startYRef.current === null) return;
+      const raw = e.clientY - startYRef.current;
+      const clamped = Math.max(0, Math.min(MAX_PULL, raw));
+      y.set(clamped);
+    };
+
+    const finish = (e: PointerEvent) => {
+      if (startYRef.current === null) return;
+      const delta = e.clientY - startYRef.current;
+      startYRef.current = null;
+      setPulling(false);
+      animate(y, 0, { type: "spring", stiffness: 500, damping: 28 });
+      playNudge();
+      if (delta > PULL_THRESHOLD || Math.abs(delta) < TAP_THRESHOLD) {
+        dismissTip();
+        toggleTheme();
+      }
+    };
+
+    el.addEventListener("pointerdown", handlePointerDown);
+    el.addEventListener("pointermove", handlePointerMove);
+    el.addEventListener("pointerup", finish);
+    el.addEventListener("pointercancel", finish);
+    return () => {
+      el.removeEventListener("pointerdown", handlePointerDown);
+      el.removeEventListener("pointermove", handlePointerMove);
+      el.removeEventListener("pointerup", finish);
+      el.removeEventListener("pointercancel", finish);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " ") {
@@ -133,20 +168,13 @@ export default function ThemePullCord() {
             style={{ height: cordHeight }}
           />
           <motion.button
+            ref={buttonRef}
             type="button"
             aria-label={theme === "dark" ? "Pull to switch to light mode" : "Pull to switch to dark mode"}
             aria-pressed={theme === "dark"}
-            className="pointer-events-auto relative w-8 h-10 -mt-1 flex items-start justify-center cursor-grab active:cursor-grabbing focus:outline-none"
-            style={{ y }}
-            drag="y"
-            dragConstraints={{ top: 0, bottom: MAX_PULL }}
-            dragElastic={0.15}
-            dragSnapToOrigin
-            onDragStart={() => setPulling(true)}
-            onDragEnd={handleDragEnd}
-            onTap={handleTap}
+            className="pointer-events-auto relative w-8 h-10 -mt-1 flex items-start justify-center cursor-grab active:cursor-grabbing focus:outline-none touch-none"
+            style={{ y, touchAction: "none" }}
             onKeyDown={handleKeyDown}
-            onFocus={() => setShowTip(true)}
             whileTap={{ scale: 0.96 }}
             animate={{ scale: pulling ? 1.05 : 1 }}
             transition={{ duration: 0.15 }}
