@@ -5,6 +5,7 @@ import { accent } from "@/lib/colors";
 export default function ExperienceSection() {
   return (
     <section id="experience" className="py-24 bg-slate-50 dark:bg-[#0b0e13] relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent" />
       <div className="absolute top-32 left-16 w-20 h-20 bg-teal-500/[0.06] rounded-full blur-2xl" />
       <div className="absolute bottom-40 right-24 w-16 h-16 bg-indigo-500/[0.06] rounded-full blur-xl" />
 

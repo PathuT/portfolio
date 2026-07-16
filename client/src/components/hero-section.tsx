@@ -216,11 +216,11 @@ export default function HeroSection() {
                 <div className="flex flex-col items-center text-center">
                   <div className="relative mb-5">
                     <motion.div
-                      className="absolute -inset-2 rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-500 opacity-70 blur-md"
+                      className="absolute -inset-2 rounded-full bg-gradient-to-br from-teal-400 via-indigo-400 to-violet-500 opacity-30 dark:opacity-70 blur-md"
                       animate={{ rotate: 360 }}
                       transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
                     />
-                    <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-teal-400 to-indigo-500 flex items-center justify-center border-4 border-[#0a0d12] shadow-xl">
+                    <div className="relative w-28 h-28 rounded-full bg-gradient-to-br from-teal-400 to-indigo-500 flex items-center justify-center border-4 border-white dark:border-[#0a0d12] shadow-xl">
                       <span className="font-display text-3xl font-bold text-[#0a0d12]">{initials}</span>
                     </div>
                     <span className="absolute bottom-0 right-0 w-6 h-6 rounded-full bg-teal-300 border-4 border-white dark:border-[#0a0d12]" />

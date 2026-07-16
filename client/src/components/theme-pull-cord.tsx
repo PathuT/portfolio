@@ -131,7 +131,7 @@ export default function ThemePullCord() {
 
   return (
     <div
-      className="fixed top-14 right-4 sm:top-16 sm:right-8 z-[60] flex flex-col items-center pointer-events-none select-none"
+      className="fixed top-16 right-4 sm:right-8 z-[60] flex flex-col items-center pointer-events-none select-none"
       aria-hidden={false}
     >
       <AnimatePresence>
@@ -163,6 +163,7 @@ export default function ThemePullCord() {
           animate={nudge}
           initial={{ rotate: 0 }}
         >
+          <span className="w-1.5 h-1.5 rounded-full bg-slate-400/60 dark:bg-white/25 -mb-px" />
           <motion.div
             className="w-px bg-gradient-to-b from-slate-400/60 to-slate-400/10 dark:from-white/35 dark:to-white/5"
             style={{ height: cordHeight }}

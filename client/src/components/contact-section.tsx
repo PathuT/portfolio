@@ -67,6 +67,7 @@ export default function ContactSection() {
 
   return (
     <section id="contact" className="py-24 bg-slate-50 dark:bg-[#0b0e13] relative overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent" />
       <div className="absolute top-20 right-20 w-72 h-72 bg-teal-500/[0.06] rounded-full blur-[100px]" />
       <div className="absolute bottom-20 left-20 w-56 h-56 bg-indigo-500/[0.06] rounded-full blur-[100px]" />
 

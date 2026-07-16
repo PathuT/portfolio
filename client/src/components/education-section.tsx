@@ -16,6 +16,7 @@ export default function EducationSection() {
   return (
     <section className="py-24 bg-white dark:bg-[#0a0d12] relative overflow-hidden">
       <div className="absolute inset-0 noise-overlay" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/[0.08] rounded-full blur-[120px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
