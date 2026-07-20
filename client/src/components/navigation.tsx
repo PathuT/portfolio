@@ -43,11 +43,16 @@ export default function Navigation() {
   }, []);
 
   const handleNavClick = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
     setIsMobileMenuOpen(false);
+    
+    // Add a slight delay to allow mobile menu closing animation to start
+    // so it doesn't interrupt the smooth scrolling behavior on mobile devices
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }, 100);
   };
 
   return (
